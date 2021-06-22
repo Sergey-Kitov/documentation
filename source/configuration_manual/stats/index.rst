@@ -248,6 +248,23 @@ It's also possible to specify other percentiles than just 95%, for example:
 
 The stats counters are reset whenever the stats process is started, which also means a dovecot reload will reset statistics. Using ``doveadm stats -r`` parameter will also reset the statistics atomically after they're dumped.
 
+Modifying Statistics Dynamically
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Metrics can be added or removed dynamically, the changes do not persist after configuration reload.
+
+``Metrics can be added dynamically by running:``
+
+.. code-block:: none
+
+   doveadm stats add [--description <string>] [--exporter <name> [--exporter-include <field>]] [--fields <fields>] [--group_by <fields>] <name> <filter>
+
+``Metrics can be removed dynamically by running:``
+
+.. code-block:: none
+
+   doveadm stats remove <name>
+
 Examples:
 ---------
 
